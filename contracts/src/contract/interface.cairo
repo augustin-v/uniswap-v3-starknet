@@ -1,3 +1,4 @@
+use contracts::contract::univ3factory::PoolParameters;
 use contracts::contract::univ3pool::Slot0;
 use contracts::contract::univ3quoter::QuoteParams;
 use contracts::libraries::math::numbers::fixed_point::FixedQ64x96;
@@ -107,4 +108,15 @@ pub trait IERC20Trait<TContractState> {
         recipient: ContractAddress,
         amount: felt252,
     );
+}
+
+#[starknet::interface]
+pub trait UniswapV3PoolDeployer<TContractState> {
+    fn get_parameters(self: @TContractState) -> PoolParameters;
+    fn create_pool(
+        ref self: TContractState,
+        tokenX: ContractAddress,
+        tokenY: ContractAddress,
+        tick_spacing: i32,
+    ) -> ContractAddress;
 }
