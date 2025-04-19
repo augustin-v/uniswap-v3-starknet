@@ -4,6 +4,7 @@ pub mod contract {
     pub mod univ3pool;
     pub mod univ3quoter;
     pub mod univ3tick_bitmap;
+    pub mod univ3factory;
 }
 
 pub mod libraries {
