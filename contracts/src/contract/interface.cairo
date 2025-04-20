@@ -111,12 +111,12 @@ pub trait IERC20Trait<TContractState> {
 }
 
 #[starknet::interface]
-pub trait UniswapV3PoolDeployer<TContractState> {
+pub trait IUniswapV3PoolDeployer<TContractState> {
     fn get_parameters(self: @TContractState) -> PoolParameters;
     fn create_pool(
         ref self: TContractState,
-        tokenX: ContractAddress,
-        tokenY: ContractAddress,
+        token0: ContractAddress,
+        token1: ContractAddress,
         tick_spacing: i32,
     ) -> ContractAddress;
 }
