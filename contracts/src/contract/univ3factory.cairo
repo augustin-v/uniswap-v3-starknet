@@ -13,7 +13,6 @@ pub mod UniswapV3Factory {
 
     #[storage]
     struct Storage {
-        parameters: PoolParameters,
         tick_spacings: Map<i32, bool>,
         pools: Map<ContractAddress, Map<ContractAddress, Map<i32, ContractAddress>>>,
         owner: ContractAddress,
@@ -65,10 +64,9 @@ pub mod UniswapV3Factory {
 
     #[abi(embed_v0)]
     impl IUniswapV3PoolDeployerImpl of IUniswapV3PoolDeployer<ContractState> {
-        fn get_parameters(self: @ContractState) -> PoolParameters {
-            self.parameters.read()
+        fn get_pool(self: @ContractState, token0: ContractAddress, token1: ContractAddress, tick_spacing: i32) -> ContractAddress {
+            self.pools.entry(token0).entry(token1).entry(tick_spacing).read()
         }
-
         fn create_pool(
             ref self: ContractState,
             token0: ContractAddress,
@@ -91,7 +89,7 @@ pub mod UniswapV3Factory {
                     .entry(token0)
                     .entry(token1)
                     .entry(tick_spacing)
-                    .read() != 0x0
+                    .read() == 0x0
                     .try_into()
                     .unwrap(),
                 'pool already exists',
