@@ -26,9 +26,9 @@ This installs the correct versions defined in .tool-versions.
 
 For manual installation, refer to:
 
-Starknet Foundry
+- Starknet Foundry
 
-Scarb
+- Scarb
 
 
 ### 🛠️ Making a Pull Request (PR)
