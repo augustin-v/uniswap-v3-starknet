@@ -21,6 +21,7 @@ If you're using `asdf`, simply run:
 
 ```bash
 asdf install
+```
 This installs the correct versions defined in .tool-versions.
 
 For manual installation, refer to:
@@ -29,39 +30,52 @@ Starknet Foundry
 
 Scarb
 
-## 🛠️ Making a Pull Request (PR)
+
+### 🛠️ Making a Pull Request (PR)
 1. Fork the repo
 
 2. Clone your fork:
+```bash
 git clone https://github.com/YOUR_USERNAME/starknet-uniswap-v3.git
-
+```
 3. Create a new branch for your change:
+```bash
 git checkout -b feature/your-feature-name
-
+```
 4. Make your changes and commit them:
+```bash
 git add .
 git commit -m "feat: short description of your change"
-
+```
 5. Push your branch:
+```bash
 git push origin feature/your-feature-name
+```
+6. Open a pull request to the ```main``` branch on GitHub.
 
-6. Open a pull request to the main branch on GitHub.
 
 ## ✅ Pre-PR Checklist
+
 Before submitting a PR, please make sure to:
 
-### ✅ Run formatting:
+✅ Run formatting:
+```bash
 scarb fmt
+```
 
 ✅ Run tests:
+```bash
 snforge test
+```
 
 ✅ Ensure your code is clean and understandable
 
-✅ Confirm no unnecessary files or debug code are included
+✅ Confirm no unnecessary files or debug code are included'''
+
 
 ## 📝 Draft PRs
-If you're stuck or unsure, open a draft PR with a comment describing what you're trying to do. This lets maintainers help you early on without needing a finished product.
 
+If you're stuck or unsure, open a draft PR with a comment describing what you're trying to do. This lets maintainers help you early on without needing a finished product.
+-
 Thanks again for contributing!
 Your effort helps make this an awesome learning resource for everyone
