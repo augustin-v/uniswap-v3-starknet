@@ -93,3 +93,4 @@ cd contracts
 scarb fmt --check  # Check formatting
 scarb snforge test # Run tests
 ```
+👉 See our [Contribution Guidelines](https://github.com/Haroldwonder/uniswap-v3-starknet/blob/main/.github/CONTRIBUTING.md) to get started.
