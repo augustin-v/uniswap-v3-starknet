@@ -108,3 +108,16 @@ pub trait IERC20Trait<TContractState> {
         amount: felt252,
     );
 }
+
+#[starknet::interface]
+pub trait IUniswapV3PoolDeployer<TContractState> {
+    fn get_pool(
+        self: @TContractState, token0: ContractAddress, token1: ContractAddress, tick_spacing: i32,
+    ) -> ContractAddress;
+    fn create_pool(
+        ref self: TContractState,
+        token0: ContractAddress,
+        token1: ContractAddress,
+        tick_spacing: i32,
+    ) -> ContractAddress;
+}
