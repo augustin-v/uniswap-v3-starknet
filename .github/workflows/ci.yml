@@ -26,8 +26,8 @@ jobs:
       - name: Install Scarb
         run: |
           git clone https://github.com/software-mansion/asdf-scarb.git ~/.asdf/plugins/scarb
-          asdf install scarb 2.11.1
-          asdf global scarb 2.11.1
+          asdf install scarb 2.11.2
+          asdf global scarb 2.11.2
 
       - name: Install snforge via cargo
         run: |
